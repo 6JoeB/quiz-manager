@@ -1,33 +1,21 @@
 import React from 'react';
 import './App.css';
-import LoginButton from './components/LoginButton';
-import LogoutButton from './components/LogoutButton';
 import Profile from './components/Profile';
 import { useAuth0 } from '@auth0/auth0-react';
+import Navbar from './components/Navbar';
+
 
 function App() {
   const { isLoading } = useAuth0();
 
   if (isLoading) return <div>Loading... </div>
-  
+
   return (
     <>
-      <LoginButton/>
-      <LogoutButton/>
+      <Navbar/>
       <Profile/>
     </>
   );
 }
 
 export default App;
-
-
-
-/* <div>
-<header className="App-header">
-  <nav class="nav">
-    <a class="nav-link" href="#">Home</a>
-    <a class="nav-link" href="#">logout</a>
-  </nav>
-</header>
-</div> */

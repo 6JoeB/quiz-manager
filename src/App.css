@@ -4,13 +4,22 @@
     box-sizing: border-box;
 }
 
-body {
-    padding: 2rem;
+.nav-bar {
+    position: relative;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+    background-color: #bee2ec;
 }
 
-button {
-    margin: 2rem 0;
-    padding: 1rem 2rem;
-    width: 120px;
+.navlink {
+    font-size: 23px;
+    color: black;
     cursor: pointer;
+    padding: 3px
 }

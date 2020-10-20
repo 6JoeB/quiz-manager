@@ -18,5 +18,4 @@ const Profile = () => {
     )
 }
 
-// {JSON.stringify(user, null, 2)}
 export default Profile
