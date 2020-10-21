@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-    sqlserver1:
+    sqlserver:
         build: 
           context: .
           dockerfile: DockerFile
