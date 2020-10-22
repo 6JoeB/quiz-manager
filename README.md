@@ -6,7 +6,7 @@ A Quiz Manager built for my Makers Academy synoptic project
 ## Docker
 Docker should be installed on your local machine, the download can be found [here](https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe)
 
-Once installed Docker should be run, it may take a while to start. You will know it is running by looking at your taskbar: /br ![Docker running](https://github.com/6JoeB/quiz-manager/blob/docker-setup/README_images/docker_running.png?raw=true) 
+Once installed Docker should be run, it may take a while to start. You will know it is running by looking at your taskbar: <br /> ![Docker running](https://github.com/6JoeB/quiz-manager/blob/docker-setup/README_images/docker_running.png?raw=true) 
 
 To create the local mysql container, change directory to the root folder and run `docker-compose up -d`
 
