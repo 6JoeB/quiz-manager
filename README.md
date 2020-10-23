@@ -4,8 +4,7 @@ A Quiz Manager built for my Makers Academy synoptic project
 # How to run this project:
 
 ## Requirements
-Node.js and NPM can be installed [here](https://nodejs.org/en/download/)
-To check if they are already installed you can run `node -v` and `npm -v`
+Node.js and NPM are required and can be installed [here](https://nodejs.org/en/download/), to check if they are already installed you can run `node -v` and `npm -v`
 
 Docker is also required and can be downloaded form [here](https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe)
 
@@ -19,7 +18,7 @@ The MongoDB container should now be running and ready to use 😀 You can check 
 
 ## Backend
 
-Change directory to the backend folder from a new terminal with `cd backend` and run `npm install mongodb` to install
+Change directory to the backend folder from a new terminal with `cd backend` and run `npm install mongodb` and then `npm install` to install all of the required node modules.
 
 ## Frontend
 
