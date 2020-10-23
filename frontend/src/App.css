@@ -15,6 +15,7 @@
     justify-content: space-between;
     padding: .5rem 1rem;
     background-color: #bee2ec;
+    border-bottom: solid black 1px;
 }
 
 .navlink {
