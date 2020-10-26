@@ -7,7 +7,15 @@ async function main() {
 
     try {
         await client.connect();
-        await listDatabases(client);
+        // await listDatabases(client);
+        // await createQuestion(client, 
+        //     {
+        //         quiz: "test2",
+        //         questions: "what is the meaning of life?",
+        //         answer: "41"
+        //     }
+        // );
+        await findAllQuizQuestions(client, "test");
     } catch (e) {
         console.error(e);
     } finally {
@@ -22,5 +30,22 @@ async function listDatabases(client){
     console.log("Databases:");
     databasesList.databases.forEach(db => console.log(` - ${db.name}`));
 };
+
+//create new question in database collection
+async function createQuestion(client, question) {
+    const result = await client.db("quiz_manager").collection("questions_and_answers").insertOne(question);
+    console.log(`New listing created with the following id: ${result.insertedId}`);
+} 
+
+//return questions for specified quiz
+async function findAllQuizQuestions(client, quizName) {
+    const cursor = client.db("quiz_manager").collection("questions_and_answers")
+    .find({
+        quiz: { $eq: quizName }
+    })
+
+    const results = await cursor.toArray();
+    console.log(results);
+}
 
 main().catch(console.error);
