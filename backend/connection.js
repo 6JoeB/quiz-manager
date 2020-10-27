@@ -10,14 +10,16 @@ async function main() {
         // await listDatabases(client);
         // await createQuestion(client, 
         //     {
-        //         quiz: "test2",
+        //         quiz: "test",
         //         question: "what is the meaning of life?",
         //         answer: "41"
         //     }
         // );
         // await findAllQuizQuestions(client, "test");
         // await update(client, 'test2', 'what is a question?', { question: 'what is purple?', answer: 'new answer' });
-        await updateQuizName(client, 'test2', 'test');
+        // await updateQuizName(client, 'test2', 'test');
+        // await deleteQuestion(client, 'test', 'what is purple?')
+        // await deleteQuiz(client, 'test2');
     } catch (e) {
         console.error(e);
     } finally {
@@ -71,6 +73,18 @@ async function updateQuizName(client, quizName, newQuizName) {
     result = await client.db("quiz_manager").collection("questions_and_answers").updateMany({ quiz: { $eq: quizName }}, { $set: { quiz: newQuizName }});
     console.log(`${result.matchedCount} documents(s) matched the query criteria`);
     console.log(`${result.modifiedCount} document(s) was/were updated`);
+}
+
+//delete a question
+async function deleteQuestion(client, quizName, question) {
+    result = await client.db("quiz_manager").collection("questions_and_answers").deleteOne({ quiz: quizName, question: question })
+    console.log(`${result.deletedCount} document(s) was/were deleted.`);
+}
+
+//delete an entire quiz
+async function deleteQuiz(client, quizName) {
+    result = await client.db("quiz_manager").collection("questions_and_answers").deleteMany({ quiz: { $eq: quizName } })
+    console.log(`${result.deletedCount} document(s) was/were deleted.`);
 }
 
 main().catch(console.error);
