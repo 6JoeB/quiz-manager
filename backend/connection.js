@@ -16,7 +16,8 @@ async function main() {
         //     }
         // );
         // await findAllQuizQuestions(client, "test");
-        await update(client, 'test2', 'what is a question?', { question: 'what is purple?', answer: 'new answer' });
+        // await update(client, 'test2', 'what is a question?', { question: 'what is purple?', answer: 'new answer' });
+        await updateQuizName(client, 'test2', 'test');
     } catch (e) {
         console.error(e);
     } finally {
@@ -58,10 +59,16 @@ async function findAllQuizQuestions(client, quizName) {
     
 }
 
-
 //update a question or answer or both
-async function update(client, quizName, originalQuestion, updatedData) {
+async function updateQuestionOrAnswer(client, quizName, originalQuestion, updatedData) {
     result = await client.db("quiz_manager").collection("questions_and_answers").updateOne({ quiz: quizName, question: originalQuestion }, {$set: updatedData});
+    console.log(`${result.matchedCount} documents(s) matched the query criteria`);
+    console.log(`${result.modifiedCount} document(s) was/were updated`);
+}
+
+//update a quiz name
+async function updateQuizName(client, quizName, newQuizName) {
+    result = await client.db("quiz_manager").collection("questions_and_answers").updateMany({ quiz: { $eq: quizName }}, { $set: { quiz: newQuizName }});
     console.log(`${result.matchedCount} documents(s) matched the query criteria`);
     console.log(`${result.modifiedCount} document(s) was/were updated`);
 }
