@@ -10,12 +10,12 @@ async function main() {
         // await listDatabases(client);
         // await createQuestion(client, 
         //     {
-        //         quiz: "test",
-        //         question: "what is the meaning of life?",
-        //         answer: "41"
+        //         quiz: "test2",
+        //         question: "what is 4+4?",
+        //         answer: "8"
         //     }
         // );
-        // await findAllQuizQuestions(client, "test");
+        await findAllQuizQuestions(client, "test2");
         // await update(client, 'test2', 'what is a question?', { question: 'what is purple?', answer: 'new answer' });
         // await updateQuizName(client, 'test2', 'test');
         // await deleteQuestion(client, 'test', 'what is purple?')
@@ -49,16 +49,18 @@ async function findAllQuizQuestions(client, quizName) {
     })
 
     const results = await cursor.toArray();
+    let questionsArray = [];
 
     if (results.length > 0) {
         results.forEach((result, i) => {
-            console.log("Result(s) found:")
-            console.log(`${i+1}. quiz name: ${result.quiz}, question: ${result.question}, answer: ${result.answer}, Id: ${result._id}`)
+            // console.log("Result(s) found:")
+            // console.log(`${i+1}. quiz name: ${result.quiz}, question: ${result.question}, answer: ${result.answer}, Id: ${result._id}`)
+            questionsArray.push({quizName: `${result.quiz}`, question: `${result.question}`, answer: `${result.answer}`})
         })
     } else {
         console.log("No results found :(")
     }
-    
+    console.log(questionsArray);
 }
 
 //update a question or answer or both
