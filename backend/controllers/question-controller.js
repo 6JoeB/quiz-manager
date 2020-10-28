@@ -1,4 +1,4 @@
-import Question, { findOne, findMany, findOneAndDelete, find } from '../models/question-model';
+const Question = require('../models/question-model');
 
 createQuestion = (req, res) => {
     const body = req.body;
@@ -40,7 +40,7 @@ updateQuestion = async (req, res) => {
         })
     }
 
-    findOne({ _id: req.params.id }, (err, question) => {
+    Question.findOne({ _id: req.params.id }, (err, question) => {
         if (err) {
             return res.status(404).json({
                 err,
@@ -74,7 +74,7 @@ updateQuizName = async (req, res) => {
         })
     }
 
-    findMany({ quiz: req.params.quiz }, (err, question) => {
+    Question.findMany({ quiz: req.params.quiz }, (err, question) => {
         if (err) {
             return res.status(404).json({
                 err,
@@ -112,7 +112,7 @@ updateQuizName = async (req, res) => {
 }
 
 deleteQuestion = async (req, res) => {
-    await findOneAndDelete({ _id: req.params.id }, (err, question) => {
+    await Question.findOneAndDelete({ _id: req.params.id }, (err, question) => {
         if (err) {
             return res.status(400)
         }
@@ -131,7 +131,7 @@ deleteQuestion = async (req, res) => {
 }
 
 getQuestions = async (req, res) => {
-    await find({ quiz: req.params.quiz }, (err, questions) => {
+    await Question.find({ quiz: req.params.quiz }, (err, questions) => {
         if (err) {
             return res.status(400).json({
                 success: false,
@@ -151,7 +151,7 @@ getQuestions = async (req, res) => {
     }).catch(err => console.log(err))
 }
 
-export default {
+module.exports = {
     createQuestion,
     updateQuestion,
     updateQuizName,

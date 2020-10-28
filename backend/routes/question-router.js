@@ -1,6 +1,6 @@
-import { Router } from 'express';
+const express = require('express')
 
-import QuestionsController from '../controllers/question-controller';
+const QuestionsController = require('../controllers/question-controller');
 
 const router = Router();
 
