@@ -26,7 +26,7 @@ async function main() {
         await client.close();
     }
     
-}
+
 
 //list all databases
 async function listDatabases(client){
@@ -41,6 +41,10 @@ async function createQuestion(client, question) {
     console.log(`New listing created with the following id: ${result.insertedId}`);
 } 
 
+app.get('/', (req, res) => {
+    const collection = req.app.locals.collectio;
+    collection.fin
+})
 //return questions for specified quiz
 async function findAllQuizQuestions(client, quizName) {
     const cursor = client.db("quiz_manager").collection("questions_and_answers")
@@ -89,4 +93,4 @@ async function deleteQuiz(client, quizName) {
     console.log(`${result.deletedCount} document(s) was/were deleted.`);
 }
 
-main().catch(console.error);
+// main().catch(console.error);
