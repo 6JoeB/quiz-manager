@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const uri = "mongodb://admin:password@127.0.0.1:28017/quiz-manager?authSource=admin&readPreference=primary";
+const uri = "mongodb://admin:password@127.0.0.1:28017/quiz_manager?authSource=admin&readPreference=primary";
 
 mongoose
     .connect(uri, { useNewUrlParser: true })

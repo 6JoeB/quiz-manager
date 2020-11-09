@@ -2,7 +2,7 @@ const express = require('express')
 
 const QuestionsController = require('../controllers/question-controller');
 
-const router = Router();
+const router = express.Router();
 
 router.post('/question', QuestionsController.createQuestion);
 router.put('/question/:id', QuestionsController.updateQuestion);

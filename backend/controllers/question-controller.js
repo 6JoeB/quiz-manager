@@ -95,20 +95,6 @@ updateQuizName = async (req, res) => {
             });
         });
     });
-
-    //or 
-    // Question.updateMany({
-    //     quiz: { $eq: req.params.quiz }}, 
-    //     { 
-    //         quiz: req.params.newQuiz 
-    //     }, 
-    //     function (err, docs) {
-    //     if (err) {
-    //         console.log(err);
-    //     } else {
-    //         console.log("Updated docs: ", docs);
-    //     }
-    // })
 }
 
 deleteQuestion = async (req, res) => {

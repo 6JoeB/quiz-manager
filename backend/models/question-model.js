@@ -9,4 +9,4 @@ const Question = new Schema(
     }
 )
 
-module.exports = mongoose.model('questions', Question);
+module.exports = mongoose.model('questions_and_answers', Question);
