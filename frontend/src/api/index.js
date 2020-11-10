@@ -4,14 +4,14 @@ const api = axios.create({
     baseURL: 'https://localhost:3000/api',
 });
 
-export const insertQuestion = payload => api.post(`/question`, payload);
-export const getQuestionsByQuiz = quiz => api.get(`/question/${quiz}`);
-export const updateQuestionById = (id, payload) => api.put(`/question/${id}`, payload);
-export const updateQuizName = (quiz, payload) => api.put(`./question/${quiz}`, payload);
+export const createQuestion = payload => api.post(`/question/create`, payload);
+export const getQuestionsByQuiz = quiz => api.get(`/question/list/${quiz}`);
+export const updateQuestionById = (id, payload) => api.put(`/question/update/${id}`, payload);
+export const updateQuizName = (quiz, payload) => api.put(`/question/update/${quiz}`, payload);
 export const deleteQuestion = id => api.delete(`/question/${id}`);
 
 const apis = {
-    insertQuestion, 
+    createQuestion, 
     getQuestionsByQuiz, 
     updateQuestionById, 
     updateQuizName, 
