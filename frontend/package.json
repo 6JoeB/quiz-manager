@@ -13,7 +13,7 @@
     "react-dom": "^16.14.0",
     "react-json-pretty": "^2.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^4.0.0",
     "react-table": "^7.6.1",
     "styled-components": "^5.2.1"
   },

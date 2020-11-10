@@ -14,13 +14,13 @@
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: .5rem 1rem;
-    background-color: #bee2ec;
+    background-color: #077e9c;
     border-bottom: solid black 1px;
 }
 
 .navlink {
     font-size: 23px;
-    color: black;
+    color: white;
     cursor: pointer;
     padding: 3px
 }
