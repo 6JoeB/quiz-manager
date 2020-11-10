@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-/* .nav-bar {
+.nav-bar {
     position: relative;
     display: flex;
     -ms-flex-wrap: wrap;
@@ -18,9 +18,11 @@
     border-bottom: solid black 1px;
 }
 
-.navlink {
-    font-size: 23px;
+.nav-link {
     color: white;
     cursor: pointer;
-    padding: 3px
-} */
+}
+
+.navbar-title {
+    font-size: 19.3px;
+}
