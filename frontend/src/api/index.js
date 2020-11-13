@@ -9,13 +9,15 @@ export const getQuestionsByQuiz = quiz => api.get(`/question/list/${quiz}`);
 export const updateQuestionById = (id, payload) => api.put(`/question/update/${id}`, payload);
 export const updateQuizName = (quiz, payload) => api.put(`/question/update/${quiz}`, payload);
 export const deleteQuestion = id => api.delete(`/question/${id}`);
+export const getAllQuizzes = () => api.get(`/quizzes`);
 
 const apis = {
     createQuestion, 
     getQuestionsByQuiz, 
     updateQuestionById, 
     updateQuizName, 
-    deleteQuestion
+    deleteQuestion,
+    getAllQuizzes
 };
 
 export default apis;

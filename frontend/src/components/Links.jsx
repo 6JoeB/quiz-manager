@@ -12,7 +12,7 @@ class Links extends Component {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/question/list/quiz" className="nav-link">
+                        <Link to="/quizzes" className="nav-link">
                             Quizzes
                         </Link>
                     </li>

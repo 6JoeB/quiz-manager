@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import '../App.css';
 import Profile from '../components/Profile';
 import NavBar from '../components/Navbar';
-import { QuestionCreate, QuestionList, QuestionUpdate, QuizUpdate } from '../pages/index';
+import { QuestionCreate, QuestionList, QuestionUpdate, QuizUpdate, QuizzesList } from '../pages/index';
 
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
         <Route path="/question/list/:quiz" exact component={QuestionList}/>
         <Route path="/question/update/:id" exact component={QuestionUpdate}/>
         <Route path="/question/update/:quiz" exact component={QuizUpdate}/>
+        <Route path="/quizzes" exact component={QuizzesList}/>
       </Switch>
       <Profile/>
     </Router>

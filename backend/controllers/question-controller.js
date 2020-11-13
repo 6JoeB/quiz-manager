@@ -137,10 +137,23 @@ getQuestions = async (req, res) => {
     }).catch(err => console.log(err))
 }
 
+getQuizNames = async (req, res) => {
+    await Question.find({}, (err, questions) => {
+        if (err) {
+            return res.status(400).json({ success: false, error: err });
+        }
+        if (!questions.length) {
+            return res.status(404).json({ success: false, error: `Quizzes not found`});
+        }
+        return res.status(200).json({ success: true, data: questions });
+    }).catch(err => console.log(err));
+}
+
 module.exports = {
     createQuestion,
     updateQuestion,
     updateQuizName,
     deleteQuestion,
     getQuestions,
+    getQuizNames
 }
