@@ -15,10 +15,12 @@ class QuizzesList extends Component {
     componentDidMount = async () => {
         this.setState({ isLoading: true });
         await api.getAllQuizzes().then(quizzes => {
+            console.log("quizzes: " + quizzes);
             this.setState({
-                quizzes: quizzes.data.data,
+                quizzes: quizzes.data["data"],
                 isLoading: false,
             })
+            
         })
     }
 
@@ -33,6 +35,7 @@ class QuizzesList extends Component {
                 filterable: true,
             }
         ]
+
         let showTable = true;
         if (!quizzes.length) {
             showTable = false;
@@ -40,6 +43,7 @@ class QuizzesList extends Component {
 
         return (
             <div>
+                this is where the quizzes table should go {quizzes}
               {showTable && (
                   <ReactTable
                   data={quizzes}
