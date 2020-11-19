@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
+    "html-react-parser": "^0.14.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-json-pretty": "^2.2.0",

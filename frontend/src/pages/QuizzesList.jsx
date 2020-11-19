@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import Parser from 'html-react-parser';
 
 export default class QuizzesList extends Component {
     constructor(props) {
@@ -24,12 +25,42 @@ export default class QuizzesList extends Component {
 
     render() {
         const { quizzes, isLoading } = this.state;
-        console.log(quizzes)
-        const quizNames = ["test", "test2"];
+        
+        let quizNames = quizzes.map(question => question.quiz);
+        let filteredQuizNames = []
+        quizNames.filter(function(value) {
+            if (!filteredQuizNames.includes(value)) {
+                filteredQuizNames.push(value)
+            }
+        })
+
+        let quizNamesHTMLTable = `
+            <table className="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Quiz Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `
+        for (let i = 0; i < filteredQuizNames.length; i++) {
+            quizNamesHTMLTable += `
+                    <tr>${filteredQuizNames[i]}</tr>
+                    `
+        }
+
+        quizNamesHTMLTable += `
+                </tbody>
+            </table>
+        `
+        console.log(quizNamesHTMLTable)
         return (
-            <div>
-                this is where the quizzes table should go: {quizNames}
+            <>
+            <div id="quizNamesTable">
+                {Parser(quizNamesHTMLTable)}
+  
             </div>
+            </>
             
         )
     }
