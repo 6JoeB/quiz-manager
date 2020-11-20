@@ -20,7 +20,7 @@ export default class QuizzesList extends Component {
             this.setState({
                 quizzes: response.data.data,
                 isLoading: false
-            })
+            });
         });
     };
 
