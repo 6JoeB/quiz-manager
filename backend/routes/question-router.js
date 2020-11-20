@@ -4,7 +4,7 @@ const QuestionsController = require('../controllers/question-controller');
 
 const router = express.Router();
 
-router.post('/question', QuestionsController.createQuestion);
+router.post('/question/create', QuestionsController.createQuestion);
 router.put('/question/:id', QuestionsController.updateQuestion);
 router.put('/question/:quiz', QuestionsController.updateQuizName)
 router.delete('/question/:id', QuestionsController.deleteQuestion);

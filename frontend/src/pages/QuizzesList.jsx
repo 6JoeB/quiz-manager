@@ -1,19 +1,7 @@
 import React, { Component } from 'react';
 import Parser from 'html-react-parser';
 import api from '../api';
-
 import '../App.css';
-
-class OpenQuiz extends Component {
-    openQuiz = event => {
-        event.preventDefault()
-        window.location.href = `/question/${this.props.quiz}`
-    }
-
-    render() {
-        return <tr onClick={this.openQuiz}></tr>
-    }
-}
 
 export default class QuizzesList extends Component {
     constructor(props) {
