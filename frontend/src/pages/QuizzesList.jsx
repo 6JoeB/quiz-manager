@@ -4,6 +4,17 @@ import api from '../api';
 
 import '../App.css';
 
+class OpenQuiz extends Component {
+    openQuiz = event => {
+        event.preventDefault()
+        window.location.href = `/question/${this.props.quiz}`
+    }
+
+    render() {
+        return <tr onClick={this.openQuiz}></tr>
+    }
+}
+
 export default class QuizzesList extends Component {
     constructor(props) {
         super(props)
@@ -38,7 +49,12 @@ export default class QuizzesList extends Component {
 
         let quizNamesHTMLTableEntries = ``
         for (let i = 0; i < filteredQuizNames.length; i++) {
-            quizNamesHTMLTableEntries += `        <tr><td classPath="quiz-names-table__entry">${filteredQuizNames[i]}</td></tr>`
+            quizNamesHTMLTableEntries += `
+                    <tr>
+                        <td classPath="quiz-names-table__entry">
+                            <a href="/question/list/${filteredQuizNames[i]}">${filteredQuizNames[i]}</a>
+                        </td>
+                    </tr>`
         }
 
         return (
