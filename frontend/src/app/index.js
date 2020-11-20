@@ -24,7 +24,6 @@ function App() {
         <Route path="/question/update/:quiz" exact component={QuizUpdate}/>
         <Route path="/quizzes" exact component={QuizzesList}/>
       </Switch>
-      <Profile/>
     </Router>
   );
 }

@@ -26,3 +26,13 @@
 .navbar-title {
     font-size: 19.3px;
 }
+
+.quiz-names-table {
+    margin: 0 auto;
+    text-align: center;
+    width: 85%;
+    margin-top: 30px;
+}
+.quiz-names-table__entry {
+
+}
