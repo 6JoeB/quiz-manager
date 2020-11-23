@@ -30,41 +30,36 @@ export default class QuestionList extends Component {
         const { questions, isLoading } = this.state;
         let questionsArray = questions.map(dbObject => dbObject.question);
         let answersArray = questions.map(dbObject => dbObject.answer);
-        // let filteredQuizNames = []
-        // for(let i = 0; i < quizNames.length; i++) {
-        //     if (!filteredQuizNames.includes(quizNames[i])) {
-        //         filteredQuizNames.push(quizNames[i])
-        //     }
-        // }
 
-        // let quizNamesHTMLTableEntries = ``
-        // for (let i = 0; i < filteredQuizNames.length; i++) {
-        //     quizNamesHTMLTableEntries += `
-        //             <tr>
-        //                 <td classPath="quiz-names-table__entry">
-        //                     <a href="/question/list/${filteredQuizNames[i]}">${filteredQuizNames[i]}</a>
-        //                 </td>
-        //             </tr>`
-        // }
+        let questionsAndAnswersHTMLTableEntries = ``
+        for(let i = 0; i < questionsArray.length; i++) {
+            questionsAndAnswersHTMLTableEntries += 
+            `<tr>
+                <td classPath="question-and-answers-table__entry">
+                    ${questionsArray[i]}
+                </td>
+                <td classPath="question-and-answers-table__entry">
+                    ${answersArray[i]}
+                </td>
+            </tr>`
+        }
 
         return (
             <>
             <div>
-                {questionsArray}
-                {answersArray}
-                {/* <table className="table quiz-names-table">
+                <table className="table questions-and-answers-table">
                     <thead>
                         <tr>
-                            <th scope="col">Quiz Name</th>
+                            <th scope="col">Question</th>
+                            <th scope="col">Answer</th>
                         </tr>
                     </thead>
                     <tbody>
-                    {Parser(quizNamesHTMLTableEntries)}
+                        {Parser(questionsAndAnswersHTMLTableEntries)}
                     </tbody>
-                </table> */}
+                </table>
             </div>
             </>
-            
         )
     }
 }
