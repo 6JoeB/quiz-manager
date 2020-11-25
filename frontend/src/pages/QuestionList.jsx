@@ -26,36 +26,43 @@ export default class QuestionList extends Component {
         });
     };
 
-    render() {
-        const { questions, isLoading } = this.state;
-        let questionsArray = questions.map(dbObject => dbObject.question);
-        let answersArray = questions.map(dbObject => dbObject.answer);
-
-        let questionsAndAnswersHTMLTableEntries = ``
-        for(let i = 0; i < questionsArray.length; i++) {
-            questionsAndAnswersHTMLTableEntries += 
-            `<tr>
-                <td classPath="question-and-answers-table__entry">
-                    ${questionsArray[i]}
-                </td>
-                <td classPath="question-and-answers-table__entry">
-                    ${answersArray[i]}
-                </td>
-            </tr>`
+    showOrHideAnswer(id) {
+        let el = document.getElementById(id)
+        if (el.style.visibility == "visible") {
+            el.style.visibility = "hidden";
+        } else {
+            el.style.visibility = "visible";
         }
+    }
+
+    render() {
+        let tableEntries = this.state.questions.map((entry) =>
+            <tr>
+                <td className="q-and-a-table__data">
+                    {entry.question}
+                </td>
+                <td id={entry.question} className="q-and-a-table__data__hidden">
+                    {entry.answer}
+                </td>
+                <td>
+                    <button className="q-and-a-table__button" onClick={() => this.showOrHideAnswer(entry.question)}>Show/Hide Answer</button>
+                </td>
+            </tr>
+        )
 
         return (
             <>
             <div>
-                <table className="table questions-and-answers-table">
+                <table className="table q-and-a-table">
                     <thead>
                         <tr>
                             <th scope="col">Question</th>
                             <th scope="col">Answer</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        {Parser(questionsAndAnswersHTMLTableEntries)}
+                        {tableEntries}
                     </tbody>
                 </table>
             </div>

@@ -39,7 +39,7 @@ export default class QuizzesList extends Component {
         for (let i = 0; i < filteredQuizNames.length; i++) {
             quizNamesHTMLTableEntries += `
                     <tr>
-                        <td classPath="quiz-names-table__entry">
+                        <td classPath="quiz-names-table__data">
                             <a href="/question/list/${filteredQuizNames[i]}">${filteredQuizNames[i]}</a>
                         </td>
                     </tr>`

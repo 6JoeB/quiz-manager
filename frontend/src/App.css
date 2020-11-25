@@ -45,8 +45,17 @@
     margin: 30px;
 }
 
-.questions-and-answers-table {
+.q-and-a-table {
     margin: 0 auto;
     text-align: center;
     margin-top: 30px;
+}
+
+.q-and-a-table__data__hidden {
+    visibility: hidden;
+}
+
+.q-and-a-table__button {
+    background: none;
+    padding: 3px;
 }
