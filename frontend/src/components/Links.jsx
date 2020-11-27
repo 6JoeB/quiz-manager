@@ -8,7 +8,7 @@ class Links extends Component {
                 <ul className="nav">
                     <li className="nav-item">
                         <Link to="/" className="navbar-brand navbar-title">
-                            Quiz manager
+                            Quiz Manager
                         </Link>
                     </li>
                     <li className="nav-item">

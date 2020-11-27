@@ -18,13 +18,20 @@ export default class QuestionList extends Component {
         this.setState({ isLoading: true });
 
         await api.getQuestionsByQuiz(this.state.quiz).then(response => {
-            console.log(response.data.data);
             this.setState({
                 questions: response.data.data,
                 isLoading: false
             });
         });
     };
+
+    deleteQuestion = async (id) => {
+        console.log("attempting delete")
+        await api.deleteQuestion(id).then(response => {
+            window.alert("Question deleted")
+        })
+        window.location.reload();
+    }
 
     showOrHideAnswer(id) {
         let el = document.getElementById(id)
@@ -36,6 +43,10 @@ export default class QuestionList extends Component {
     }
 
     render() {
+        let quizName = this.state.questions.map((entry) =>
+            entry.quiz
+        );
+        
         let tableEntries = this.state.questions.map((entry) =>
             <tr>
                 <td className="q-and-a-table__data">
@@ -46,13 +57,15 @@ export default class QuestionList extends Component {
                 </td>
                 <td>
                     <button className="q-and-a-table__button" onClick={() => this.showOrHideAnswer(entry.question)}>Show/Hide Answer</button>
+                    <button className="q-and-a-table__button" onClick={() => this.deleteQuestion(entry._id)}>Delete</button>
                 </td>
             </tr>
-        )
+        );
 
         return (
             <>
             <div>
+            <h2 className="q-and-a-table__header">{quizName[0]}</h2>
                 <table className="table q-and-a-table">
                     <thead>
                         <tr>
