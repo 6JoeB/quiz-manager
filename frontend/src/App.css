@@ -14,8 +14,8 @@
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: .5rem 1rem;
-    background-color: #077e9c;
-    border-bottom: solid black 1px;
+    background-color: #345564;
+    border-bottom: solid rgb(55, 68, 87) 1px;
 }
 
 .nav-link {
@@ -61,8 +61,7 @@
 }
 
 .q-and-a-table__button {
-    background: none;
-    padding: 3px;
+    margin: 2px;
 }
 
 .q-and-a-table__header {

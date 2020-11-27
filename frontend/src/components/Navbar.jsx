@@ -7,7 +7,7 @@ import LogoutButton from './LogoutButton';
 import Links from './Links'
 
 const Nav = styled.nav.attrs({
-    className: 'nav-bar navbar-expand-lg navbar-dark bg-dark',
+    className: 'nav-bar navbar-expand-lg navbar-dark ',
 })`
     margin-bottom: 20 px;
 `
