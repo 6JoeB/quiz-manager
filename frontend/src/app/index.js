@@ -22,7 +22,7 @@ function App() {
         <Route path="/question/create" exact component={QuestionCreate}/>
         <Route path="/question/list/:quiz" exact component={QuestionList}/>
         <Route path="/question/update/:id" exact component={QuestionUpdate}/>
-        <Route path="/question/update/:quiz" exact component={QuizUpdate}/>
+        <Route path="/update/:quiz" exact component={QuizUpdate}/>
         <Route path="/quizzes" exact component={QuizzesList}/>
       </Switch>
     </Router>    

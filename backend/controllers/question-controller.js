@@ -35,8 +35,8 @@ updateQuestion = async (req, res) => {
 
     if (!body) {
         return res.status(400).json({
-            succes: false,
-            error: 'You must provide a body',
+            success: false,
+            error: 'You must provide a body to update',
         })
     }
 
@@ -47,6 +47,7 @@ updateQuestion = async (req, res) => {
                 message: 'Question not found',
             })
         }
+        question.quiz = body.quiz;
         question.question = body.question;
         question.answer = body.answer;
         question.save().then(() => {
@@ -64,6 +65,27 @@ updateQuestion = async (req, res) => {
     });
 }
 
+getQuestionById = async (req, res) => {
+    await Question.find({ _id: req.params.id }, (err, question) => {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                error: err
+            })
+        }
+        if (!question.length) {
+            return res.status(404).json({
+                success: false,
+                error: "question not found"
+            })
+        }
+            return res.status(200).json({
+                success: true,
+                data: question
+            })
+    }).catch(err => console.log(err));
+}
+
 updateQuizName = async (req, res) => {
     const body = req.body;
 
@@ -74,28 +96,32 @@ updateQuizName = async (req, res) => {
         })
     }
 
-    Question.findMany({ quiz: req.params.quiz }, (err, question) => {
+    // Question.update({ quiz: req.params.quiz }, { $set: { "quiz": body.quiz }}, {multi: true})
+
+    Question.find({ quiz: req.params.quiz }, (err, questions) => {
         if (err) {
             return res.status(404).json({
                 err,
                 message: 'Quiz not found',
             })
         }
-        question.quiz = body.quiz;
-        question.save().then(() => {
-            return res.status(200).json({
-                success: true,
-                id: question._id,
-                message: 'Question updated',
-            })
-        }).catch(error => {
-            return res.status(404).json({
-                error,
-                message: 'Question not updated'
-            });
+        questionsList = questions.map(object => object._id)
+        console.log(questionsList)
+        return res.status(200).json({
+            success: true,
+            question: this.questionsList,
+            message: 'test'
+        })
+
+    }).catch(error => {
+        return res.status(404).json({
+            error,
+            message: 'Question not updated'
         });
     });
 }
+   
+
 
 deleteQuestion = async (req, res) => {
     await Question.findOneAndDelete({ _id: req.params.id }, (err, question) => {
@@ -155,5 +181,6 @@ module.exports = {
     updateQuizName,
     deleteQuestion,
     getQuestions,
-    getQuizNames
+    getQuizNames,
+    getQuestionById
 }

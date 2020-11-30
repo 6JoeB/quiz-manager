@@ -24,38 +24,53 @@ export default class QuizzesList extends Component {
         });
     };
 
+    redirectToUpdateQuizName = async (quiz) => {
+        let href = "/update/" + quiz;
+        window.location.href = href
+    }
+
+    redirectToQuiz = async (quiz) => {
+        let href = "/question/list/" + quiz;
+        window.location.href = href;
+    }
+
     render() {
         const { quizzes, isLoading } = this.state;
-        
+
         let quizNames = quizzes.map(question => question.quiz);
+        
         let filteredQuizNames = []
         for(let i = 0; i < quizNames.length; i++) {
             if (!filteredQuizNames.includes(quizNames[i])) {
                 filteredQuizNames.push(quizNames[i])
+                console.log(quizNames[i])
             }
         }
 
-        let quizNamesHTMLTableEntries = ``
-        for (let i = 0; i < filteredQuizNames.length; i++) {
-            quizNamesHTMLTableEntries += `
-                    <tr>
-                        <td classPath="quiz-names-table__data">
-                            <a href="/question/list/${filteredQuizNames[i]}">${filteredQuizNames[i]}</a>
-                        </td>
-                    </tr>`
-        }
+        let quizNamesHTMLTableEntries = filteredQuizNames.map(quizName => 
+            <tr>
+                <td className="q-and-a-table__data__vertical-centering">
+                    <a href="#" onClick={() => this.redirectToQuiz(quizName)}>{quizName}</a>
+                </td>
+                {/* <td>
+                    <button onClick={() => this.redirectToUpdateQuizName(quizName)} className="btn btn-primary button__shadow">Update Name</button>
+                </td> */}
+            </tr>
+            )
 
         return (
             <>
             <div>
+                <h2 className="text__title">Available Quizzes: </h2>
                 <table className="table quiz-names-table">
                     <thead>
                         <tr>
-                            <th scope="col">Quiz Name</th>
+                            <th scope="col">Name</th>
+                            {/* <th className="buttons-th__set-width"scope="col"></th> */}
                         </tr>
                     </thead>
                     <tbody>
-                    {Parser(quizNamesHTMLTableEntries)}
+                        {quizNamesHTMLTableEntries}
                     </tbody>
                 </table>
             </div>

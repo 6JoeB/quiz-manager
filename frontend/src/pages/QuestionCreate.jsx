@@ -45,7 +45,8 @@ export default class QuestionCreate extends Component {
         const { quiz, question, answer } = this.state;
         return (
             <div className="form-container">
-                <h2>Create a Question: </h2>
+                <h2>Create a Question or Quiz: </h2>
+                <p>- If creating a new quiz use the new quiz's name here. <br/> - If adding a question to an existing quiz then use that quiz's name.</p>
                 <label className="input-box">Quiz Name: </label>
                 <input className="form-control input-box" onChange={this.handleChangeInputQuizName} value={quiz}></input>
                 <label className="input-box">Question: </label>

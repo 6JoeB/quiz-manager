@@ -35,11 +35,16 @@ export default class QuestionList extends Component {
 
     showOrHideAnswer(id) {
         let el = document.getElementById(id)
-        if (el.style.visibility == "visible") {
+        if (el.style.visibility === "visible") {
             el.style.visibility = "hidden";
         } else {
             el.style.visibility = "visible";
         }
+    }
+
+    redirectToUpdateQuizName = async (question) => {
+        let href = "/question/update/" + question;
+        window.location.href = href;
     }
 
     render() {
@@ -49,7 +54,7 @@ export default class QuestionList extends Component {
         
         let tableEntries = this.state.questions.map((entry) =>
             <tr>
-                <td className="q-and-a-table__data">
+                <td className="q-and-a-table__data__vertical-centering">
                     {entry.question}
                 </td>
                 <td id={entry.question} className="q-and-a-table__data__hidden">
@@ -57,6 +62,7 @@ export default class QuestionList extends Component {
                 </td>
                 <td>
                     <button className="btn btn-primary q-and-a-table__button " onClick={() => this.showOrHideAnswer(entry.question)}>Show/Hide Answer</button>
+                    <button className="btn q-and-a-table__button" onClick={() => this.redirectToUpdateQuizName(entry._id)}>Edit</button>
                     <button className="btn btn-danger q-and-a-table__button" onClick={() => this.deleteQuestion(entry._id)}>Delete</button>
                 </td>
             </tr>
