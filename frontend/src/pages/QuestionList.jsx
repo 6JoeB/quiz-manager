@@ -62,7 +62,7 @@ export default class QuestionList extends Component {
                 </td>
                 <td>
                     <button className="btn btn-primary q-and-a-table__button " onClick={() => this.showOrHideAnswer(entry.question)}>Show/Hide Answer</button>
-                    <button className="btn q-and-a-table__button" onClick={() => this.redirectToUpdateQuizName(entry._id)}>Edit</button>
+                    <button className="btn btn-secondary q-and-a-table__button" onClick={() => this.redirectToUpdateQuizName(entry._id)}>Edit</button>
                     <button className="btn btn-danger q-and-a-table__button" onClick={() => this.deleteQuestion(entry._id)}>Delete</button>
                 </td>
             </tr>
