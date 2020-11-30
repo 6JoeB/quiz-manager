@@ -14,13 +14,87 @@
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: .5rem 1rem;
-    background-color: #bee2ec;
-    border-bottom: solid black 1px;
+    background-color: #386479;
+    border-bottom: solid rgb(56, 73, 99) 1px;
 }
 
-.navlink {
-    font-size: 23px;
-    color: black;
+.nav-item :hover {
+    color: black !important;
+}
+
+.nav-link {
+    color: white;
     cursor: pointer;
-    padding: 3px
+}
+
+.navbar-title {
+    font-size: 19.3px;
+}
+
+.text__title {
+    margin: 15px;
+    text-align: center;
+}
+
+.quiz-names-table {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 30px;
+    max-width: 85%;
+}
+
+.quiz-names-table__data {
+    cursor: pointer;
+}
+
+.buttons-th__set-width {
+    width: 200px;
+}
+
+.button {
+    margin: 15px 15px 15px 5px
+}
+
+.input-box {
+    margin: 5px;
+}
+
+.form-container {
+    margin: 30px;
+}
+
+.q-and-a-table {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+    max-width: 90%;
+}
+
+.q-and-a-table__data__vertical-centering {
+    vertical-align: middle !important;
+}
+
+.q-and-a-table__data__hidden {
+    visibility: hidden;
+    vertical-align: middle !important;
+}
+
+.q-and-a-table__button {
+    margin-right: 6px;
+    box-shadow: 0px 1px 1px grey;
+}
+
+.q-and-a-table__header {
+    text-align: center;
+    margin-top:  15px;
+}
+
+.button__shadow {
+    box-shadow: 0px 1.5px 1.5px grey;
+}
+
+.welcome-gif {
+    width: 400px;
+    height: 300px;
+    border: none;
 }
