@@ -18,6 +18,10 @@
     border-bottom: solid rgb(56, 73, 99) 1px;
 }
 
+.nav-item :hover {
+    color: black !important;
+}
+
 .nav-link {
     color: white;
     cursor: pointer;
