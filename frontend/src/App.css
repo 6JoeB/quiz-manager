@@ -76,7 +76,7 @@
 }
 
 .q-and-a-table__button {
-    margin: 2px;
+    margin-right: 6px;
     box-shadow: 0px 1px 1px grey;
 }
 
@@ -89,3 +89,8 @@
     box-shadow: 0px 1.5px 1.5px grey;
 }
 
+.welcome-gif {
+    width: 400px;
+    height: 300px;
+    border: none;
+}
