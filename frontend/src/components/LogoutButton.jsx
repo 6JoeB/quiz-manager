@@ -8,9 +8,9 @@ const LogoutButton = () => {
 	return (
 		isAuthenticated && (
 			<>
-				<a className='nav-link' onClick={() => logout()}>
+				<button className='btn nav-link' onClick={() => logout()}>
 					{user.nickname}/Logout
-				</a>
+				</button>
 			</>
 		)
 	);
