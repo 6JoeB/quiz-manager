@@ -1,8 +1,8 @@
-version: '3.7'
-services: 
+version: "3.7"
+services:
   database:
-    image: 'mongo:latest'
-    container_name: 'mongo-db-container'
+    image: "mongo:latest"
+    container_name: "mongo-db-container"
     environment:
       MONGO_INITDB_DATABASE: quiz_manager
       MONGO_INITDB_ROOT_USERNAME: admin
