@@ -85,12 +85,12 @@ export default class QuestionUpdate extends Component {
 				>
 					Update Question
 				</button>
-				<a
+				<button
 					className='btn btn-danger button'
 					onClick={() => this.redirectToQuiz(this.state.quiz)}
 				>
 					Cancel
-				</a>
+				</button>
 			</div>
 		);
 	}
