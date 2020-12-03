@@ -11,8 +11,6 @@ db.createUser(
     }
 )
 
-// let error = true
-
 let res = [
     db.questions_and_answers.createIndex({ quiz: 1 }),
     db.questions_and_answers.createIndex({ question: 1 }),

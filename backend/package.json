@@ -4,12 +4,17 @@
   "description": "",
   "main": "connection.js",
   "dependencies": {
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "jasmine": "^3.6.3",
+    "jasmine-node": "^3.0.0",
     "mongodb": "^3.6.2",
     "mongoose": "^5.10.11",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "react-test-renderer": "^17.0.1"
   },
   "devDependencies": {},
   "scripts": {
