@@ -17,7 +17,7 @@ class Links extends Component {
 						</Link>
 					</li>
 					<li className='nav-item'>
-						<Link to='/question/create' className='nav-link'>
+						<Link to='/quizzes/new' className='nav-link'>
 							Create Question/Quiz
 						</Link>
 					</li>

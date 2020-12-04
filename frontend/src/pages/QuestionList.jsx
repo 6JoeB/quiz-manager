@@ -46,6 +46,11 @@ export default class QuestionList extends Component {
 		window.location.href = href;
 	};
 
+	// redirectToUpdateQuizName = async (questionId) => {
+	// 	let href = "/quizzes/" + questionId + "/edit";
+	// 	window.location.href = href;
+	// };
+
 	render() {
 		let quizName = this.state.questions.map((entry) => entry.quiz);
 

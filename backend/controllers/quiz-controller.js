@@ -1,4 +1,4 @@
-const Question = require("../models/question-model");
+const Question = require("../models/quiz-model");
 
 createQuestion = (req, res) => {
 	const body = req.body;
@@ -145,7 +145,7 @@ deleteQuestion = async (req, res) => {
 	}).catch((err) => console.log(err));
 };
 
-getQuestions = async (req, res) => {
+getQuestionsByQuiz = async (req, res) => {
 	await Question.find({ quiz: req.params.quiz }, (err, questions) => {
 		if (err) {
 			return res.status(400).json({
@@ -185,7 +185,7 @@ module.exports = {
 	updateQuestion,
 	updateQuizName,
 	deleteQuestion,
-	getQuestions,
+	getQuestionsByQuiz,
 	getQuizNames,
 	getQuestionById,
 };

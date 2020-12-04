@@ -23,13 +23,13 @@ export default class QuizzesList extends Component {
         });
     };
 
-    redirectToUpdateQuizName = async (quiz) => {
-        let href = "/update/" + quiz;
-        window.location.href = href
-    }
+    // redirectToUpdateQuizName = async (quiz) => {
+    //     let href = "/update/" + quiz;
+    //     window.location.href = href
+    // }
 
     redirectToQuiz = async (quiz) => {
-        let href = "/question/list/" + quiz;
+        let href = "/quizzes/" + quiz;
         window.location.href = href;
     }
 

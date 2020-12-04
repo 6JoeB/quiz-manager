@@ -24,8 +24,8 @@ function App() {
 			<NavBar />
 			<Switch>
 				<Route path='/' exact component={Homepage} />
-				<Route path='/question/create' exact component={QuestionCreate} />
-				<Route path='/question/list/:quiz' exact component={QuestionList} />
+				<Route path='/quizzes/new' exact component={QuestionCreate} />
+				<Route path='/quizzes/:quiz' exact component={QuestionList} />
 				<Route path='/question/update/:id' exact component={QuestionUpdate} />
 				<Route path='/update/:quiz' exact component={QuizUpdate} />
 				<Route path='/quizzes' exact component={QuizzesList} />
@@ -34,4 +34,5 @@ function App() {
 	);
 }
 
+//<Route path='/quizzes/:question-id/edit' exact component={QuestionUpdate} />
 export default App;

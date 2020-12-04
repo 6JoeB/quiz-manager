@@ -16,6 +16,7 @@ export default class QuestionUpdate extends Component {
 	componentDidMount = async () => {
 		await api.getQuestionById(this.state.id).then((response) => {
 			console.log(response);
+			console.log("update question page");
 			this.setState({
 				quiz: response.data.data[0].quiz,
 				question: response.data.data[0].question,
@@ -52,7 +53,7 @@ export default class QuestionUpdate extends Component {
 	};
 
 	redirectToQuiz = async (quiz) => {
-		let href = "/question/list/" + quiz;
+		let href = "/quizzes/" + quiz;
 		window.location.href = href;
 	};
 
