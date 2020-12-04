@@ -1,6 +1,6 @@
 <h1 align="center"> Quiz Manager 📝 </h1>
-A Quiz Manager built for my Makers Academy synoptic project
-
+A Quiz Manager built for my software development apprenticeship synoptic project 
+</br>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="#" target="_blank">
@@ -11,33 +11,46 @@ A Quiz Manager built for my Makers Academy synoptic project
 ## How to run this project:
 
 ### Requirements
-Node.js and NPM are required and can be installed [here](https://nodejs.org/en/download/), to check if they are already installed you can run `node -v` and `npm -v`
 
-Docker is also required and can be downloaded form [here](https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe)
+- Node.js and NPM are required and can be installed [here](https://nodejs.org/en/download/), to check if they are already installed you can run `node -v` and `npm -v`
+
+- Docker is also required and can be downloaded form [here](https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe)
 
 #### Docker
 
-Docker should be run, it may take a while to start. You will know it is running by looking at your taskbar: <br /> ![Docker running](https://github.com/6JoeB/quiz-manager/blob/docker-setup/README_images/docker_running.png?raw=true) 
+- Docker should be running, it may take a while to start up. You will know it is running by looking at your taskbar (on Windows): <br /> 
+![Docker running](https://github.com/6JoeB/quiz-manager/blob/docker-setup/README_images/docker_running.png?raw=true) 
 
-To create the local MongoDB container, from a terminal window change directory to the docker folder with `cd docker` and run `docker-compose up`
+- To create the local MongoDB container, from a terminal window change directory to the docker folder with `cd docker` and run `docker-compose up` <br />
+![Docker compose command](https://github.com/6JoeB/quiz-manager/blob/docker-setup/README_images/docker-compose-command.png?raw=true) 
 
-The MongoDB container should now be running and ready to use 😀 You can check this by running `docker container ls` or looking in the Docker dashboard (right click docker and select dashboard)
+- The MongoDB container should now be running and prepopulated with data 😀
+
+- To check it is running and healthy from a terminal run `docker container ls` to see a list of docker containers or you can look in the Docker dashboard (right click docker and select dashboard). <br />
+![Docker container running](https://github.com/6JoeB/quiz-manager/blob/docker-setup/README_images/docker-container-running.png?raw=true) 
 
 #### Backend
 
-Change directory to the backend folder from a new terminal with `cd backend` and run `npm install mongodb` and then `npm install` to install all of the required node modules.
+- From a new terminal change directory to the backend folder with `cd backend` and run `npm install` to install all of the required node modules.
+
+- Then run `npm start` to start the backend server. <br />
+![Backend running](https://github.com/6JoeB/quiz-manager/blob/docker-setup/README_images/backend-running.png?raw=true) 
+
 
 #### Frontend
 
-Change directory to the frontend folder from a new terminal with `cd frontend`
+- From a new terminal change directory to the frontend folder with `cd backend` and run `npm install` to install all of the required node modules.
 
-To install all of the node modules required run `npm install`
-
-To run the main application run `npm start` and open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Then run `npm start` and open [http://localhost:3000](http://localhost:3000) to view the project in browser.
 
 ## Author
 
-👤 **Joe Ball** Github: [@6Joeb](https://github.com/6Joeb)
+**Joe Ball** [![github user link][1.1]][1]
+
+
+[1.1]: http://i.imgur.com/9I6NRUm.png
+[1]: http://www.github.com/6joeb
+
 
 ## Show your support
 
