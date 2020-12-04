@@ -127,7 +127,7 @@ updateQuizName = async (req, res) => {
 };
 
 deleteQuestion = async (req, res) => {
-	await Question.findOneAndDelete({ _id: req.params.id }, (err, question) => {
+	await Question.findOneAndDelete({ _id: req.params.question_id }, (err, question) => {
 		if (err) {
 			return res.status(400);
 		}

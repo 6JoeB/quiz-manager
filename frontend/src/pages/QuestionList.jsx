@@ -24,9 +24,9 @@ export default class QuestionList extends Component {
 		});
 	};
 
-	deleteQuestion = async (id) => {
+	deleteQuestionById = async (questionId) => {
 		console.log("attempting delete");
-		await api.deleteQuestion(id).then((response) => {
+		await api.deleteQuestionById(questionId).then((response) => {
 			window.alert("Question deleted");
 		});
 		window.location.reload();
@@ -77,7 +77,7 @@ export default class QuestionList extends Component {
 					</button>
 					<button
 						className='btn btn-danger q-and-a-table__button'
-						onClick={() => this.deleteQuestion(entry._id)}
+						onClick={() => this.deleteQuestionById(entry._id)}
 					>
 						Delete
 					</button>
