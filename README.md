@@ -25,7 +25,7 @@ Built with:
 
 - Node.js and NPM are required and can be installed [here](https://nodejs.org/en/download/), to check if they are already installed you can run `node -v` and `npm -v`
 
-- Docker is also required and can be downloaded form [here](https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe)
+- Docker is also required and can be downloaded [here](https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe)
 
 ### Docker
 
