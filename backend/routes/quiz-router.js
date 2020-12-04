@@ -7,7 +7,7 @@ const router = express.Router();
 router.get("/quizzes", QuizController.getQuizNames);
 router.post("/quizzes", QuizController.createQuestion);
 router.get("/quizzes/:quiz", QuizController.getQuestionsByQuiz);
-router.put("/question/update/:id", QuizController.updateQuestion);
+router.put("/quizzes/:question_id/edit", QuizController.updateQuestion);
 //router.put("/question/update/:quiz", QuizController.updateQuizName);
 router.delete("/question/:id", QuizController.deleteQuestion);
 router.get("/question/:id", QuizController.getQuestionById);

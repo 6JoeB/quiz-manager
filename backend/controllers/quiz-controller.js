@@ -43,7 +43,7 @@ updateQuestion = async (req, res) => {
 		});
 	}
 
-	Question.findOne({ _id: req.params.id }, (err, question) => {
+	Question.findOne({ _id: req.params.question_id }, (err, question) => {
 		if (err) {
 			return res.status(404).json({
 				err,
