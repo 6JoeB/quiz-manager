@@ -88,7 +88,7 @@ export default class QuestionList extends Component {
 		return (
 			<>
 				<div>
-					<h2 className='q-and-a-table__header'>{quizName[0]}</h2>
+					<h2 className='q-and-a-table__header'>Quiz: {quizName[0]}</h2>
 					<table className='table q-and-a-table'>
 						<thead>
 							<tr>
