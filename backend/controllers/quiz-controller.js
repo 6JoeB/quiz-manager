@@ -102,8 +102,6 @@ updateQuizName = async (req, res) => {
 		});
 	}
 
-	// Question.update({ quiz: req.params.quiz }, { $set: { "quiz": body.quiz }}, {multi: true})
-
 	Question.find({ quiz: req.params.quiz }, (err, questions) => {
 		if (err) {
 			return res.status(404).json({
