@@ -52,7 +52,7 @@ Built with:
 
 - From a new terminal change directory to the frontend folder with `cd backend` and run `npm install` to install all of the required node modules.
 
-- Then run `npm start` and open [http://localhost:3000](http://localhost:3000) to view the project in browser.
+- Then run `npm start` and open [http://localhost:8000](http://localhost:8000) to view the project in browser.
 
 ## Author
 
