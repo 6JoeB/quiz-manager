@@ -8,6 +8,17 @@ A quiz manager project built for my software development apprenticeship synoptic
   </a>
 </p>
 
+## Tech stack
+
+Built with:
+- Node.js
+- React.js
+- MongoDB
+- Express
+- Docker
+- Mongoose
+- Axios
+
 ## How to run this project:
 
 ### Requirements
