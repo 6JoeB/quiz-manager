@@ -72,7 +72,7 @@ updateQuestion = async (req, res) => {
 };
 
 getQuestionById = async (req, res) => {
-	await Question.find({ _id: req.params.id }, (err, question) => {
+	await Question.find({ _id: req.params.question_id }, (err, question) => {
 		if (err) {
 			return res.status(400).json({
 				success: false,
