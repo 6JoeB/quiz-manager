@@ -1,100 +1,106 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 .nav-bar {
-    position: relative;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: .5rem 1rem;
-    background-color: #386479;
-    border-bottom: solid rgb(56, 73, 99) 1px;
+	position: relative;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	padding: 0.5rem 1rem;
+	background-color: #386479;
+	border-bottom: solid rgb(56, 73, 99) 1px;
 }
 
 .nav-item :hover {
-    color: black !important;
+	color: black !important;
 }
 
 .nav-link {
-    color: white;
-    cursor: pointer;
+	color: white;
+	cursor: pointer;
+	background-color: none;
 }
 
 .navbar-title {
-    font-size: 19.3px;
+	font-size: 19.3px;
 }
 
 .text__title {
-    margin: 15px;
-    text-align: center;
+	margin: 15px;
+	text-align: center;
 }
 
 .quiz-names-table {
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 30px;
-    max-width: 85%;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 30px;
+	max-width: 85%;
 }
 
 .quiz-names-table__data {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .buttons-th__set-width {
-    width: 200px;
+	width: 200px;
 }
 
 .button {
-    margin: 15px 15px 15px 5px
+	margin: 15px 15px 0px 5px;
 }
 
 .input-box {
-    margin: 5px;
+	margin: 5px;
 }
 
 .form-container {
-    margin: 30px;
+	margin: 30px auto;
+	width: 90%;
+	max-width: 700px;
+	border-radius: 5px;
+  	background-color: #e3eef3;
+  	padding: 20px;
 }
 
 .q-and-a-table {
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 20px;
-    max-width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 20px;
+	max-width: 90%;
 }
 
 .q-and-a-table__data__vertical-centering {
-    vertical-align: middle !important;
+	vertical-align: middle !important;
 }
 
 .q-and-a-table__data__hidden {
-    visibility: hidden;
-    vertical-align: middle !important;
+	visibility: hidden;
+	vertical-align: middle !important;
 }
 
 .q-and-a-table__button {
-    margin-right: 6px;
-    box-shadow: 0px 1px 1px grey;
+	margin-right: 6px;
+	box-shadow: 0px 1px 1px grey;
 }
 
 .q-and-a-table__header {
-    text-align: center;
-    margin-top:  15px;
+	text-align: center;
+	margin-top: 15px;
 }
 
 .button__shadow {
-    box-shadow: 0px 1.5px 1.5px grey;
+	box-shadow: 0px 1.5px 1.5px grey;
 }
 
 .welcome-gif {
-    width: 400px;
-    height: 300px;
-    border: none;
+	width: 400px;
+	height: 300px;
+	border: none;
 }
