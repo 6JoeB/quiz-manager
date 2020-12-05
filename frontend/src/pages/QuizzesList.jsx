@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Parser from 'html-react-parser';
 import api from '../api';
 import '../App.css';
 
@@ -24,18 +23,18 @@ export default class QuizzesList extends Component {
         });
     };
 
-    redirectToUpdateQuizName = async (quiz) => {
-        let href = "/update/" + quiz;
-        window.location.href = href
-    }
+    // redirectToUpdateQuizName = async (quiz) => {
+    //     let href = "/update/" + quiz;
+    //     window.location.href = href
+    // }
 
     redirectToQuiz = async (quiz) => {
-        let href = "/question/list/" + quiz;
+        let href = "/quizzes/" + quiz;
         window.location.href = href;
     }
 
     render() {
-        const { quizzes, isLoading } = this.state;
+        const { quizzes } = this.state;
 
         let quizNames = quizzes.map(question => question.quiz);
         
@@ -50,7 +49,7 @@ export default class QuizzesList extends Component {
         let quizNamesHTMLTableEntries = filteredQuizNames.map(quizName => 
             <tr>
                 <td className="q-and-a-table__data__vertical-centering">
-                    <a href="#" onClick={() => this.redirectToQuiz(quizName)}>{quizName}</a>
+                    <button className='btn' href="#" onClick={() => this.redirectToQuiz(quizName)}>{quizName}</button>
                 </td>
                 {/* <td>
                     <button onClick={() => this.redirectToUpdateQuizName(quizName)} className="btn btn-primary button__shadow">Update Name</button>
