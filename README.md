@@ -1,5 +1,5 @@
 <h1 align="center"> Quiz Manager 📝 </h1>
-A quiz manager project built for my software development apprenticeship synoptic project.
+A quiz manager project built as practice for my software development apprenticeship synoptic project.
 </br> 
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
